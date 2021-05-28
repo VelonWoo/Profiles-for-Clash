@@ -95,6 +95,7 @@ cfw-bypass:
   - <local>
 cfw-latency-timeout: 5000
 rules:
+  - DOMAIN-KEYWORD,soman.com,DIRECT
   - DOMAIN-KEYWORD,torrentkitty,国外网站
   - DOMAIN-SUFFIX,clm8.me,国外网站
   - DOMAIN-SUFFIX,cilimao.app,国外网站
