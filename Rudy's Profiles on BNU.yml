@@ -65,7 +65,7 @@ proxy-groups:
       - Pi
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 600
+    interval: 150
   - name: 国外网站
     proxies:
       - Pluto
