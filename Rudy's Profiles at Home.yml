@@ -14,6 +14,7 @@ dns:
   enhanced-mode: fake-ip
   listen: 0.0.0.0:53
   nameserver:
+    - 4.2.2.2
     - 223.5.5.5
     - 114.114.114.114
   fake-ip-filter:
@@ -27,50 +28,49 @@ mixin:
     enable: true
     listen: :53
     nameserver:
+      - 4.2.2.2
       - 223.5.5.5
       - 114.114.114.114
 proxies:
-  - name: Eve
-    type: ss
-    server: 2001:da8:207:e187:a1f7:d254:db5b:b324
-    port: 443
-    cipher: aes-256-cfb
-    password: wormhole
   - name: Pi
     type: ss
     server: 2001:da8:207:e187:eda7:e43a:25e3:8416
     port: "443"
     cipher: aes-256-cfb
     password: wormhole
+    _index: 2
+  - name: Eve
+    type: ss
+    server: 2001:da8:207:e187:a1f7:d254:db5b:b324
+    port: "443"
+    cipher: aes-256-cfb
+    password: wormhole
+    _index: 0
   - name: Pluto
     type: ss
-    server: 2001:19f0:5:3596:5400:2ff:fe7e:483d
+    server: 2001:19f0:5:14da:5400:03ff:fe50:81be
     port: "443"
     cipher: aes-256-cfb
-    password: "72779673"
-    _index: 2
+    password: wormhole
   - name: Pluto-ipv4
     type: ss
-    server: 144.202.2.181
+    server: 64.154.38.45
     port: "443"
     cipher: aes-256-cfb
-    password: "72779673"
+    password: wormhole
 proxy-groups:
-  - name: 国外网站
-    proxies:
-      - Pluto
-      - Pluto-ipv4
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-  - name: 校园网
+  - name: 国内网站
     proxies:
       - Eve
       - Pi
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 600
-    _index: 1
+    interval: 150
+  - name: 国外网站
+    proxies:
+      - Pluto
+      - Pluto-ipv4
+    type: select
 cfw-bypass:
   - localhost
   - 127.*
@@ -94,7 +94,7 @@ cfw-bypass:
   - 192.168.*
   - <local>
 cfw-latency-timeout: 5000
-  rules:
+rules:
   - DOMAIN-SUFFIX,bnu.edu.cn,校园网
   - DOMAIN-SUFFIX,googletraveladservices.com,DIRECT
   - DOMAIN,dl.google.com,DIRECT
