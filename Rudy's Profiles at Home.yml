@@ -59,7 +59,7 @@ proxies:
     cipher: aes-256-cfb
     password: wormhole
 proxy-groups:
-  - name: 国内网站
+  - name: 校园网
     proxies:
       - Eve
       - Pi
