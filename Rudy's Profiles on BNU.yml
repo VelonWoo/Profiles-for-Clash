@@ -100,6 +100,7 @@ rules:
   - DOMAIN-KEYWORD,soman.com,DIRECT
   - DOMAIN-KEYWORD,torrentkitty,国外网站
   - DOMAIN-SUFFIX,clm8.me,国外网站
+  - DOMAIN-SUFFIX,libgen.rs,国外网站
   - DOMAIN-SUFFIX,cilimao.app,国外网站
   - DOMAIN-KEYWORD,stackexchange,国外网站
   - DOMAIN-SUFFIX,office.com,国外网站
