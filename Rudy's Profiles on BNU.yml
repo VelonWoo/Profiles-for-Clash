@@ -71,7 +71,6 @@ proxy-groups:
       - Pluto
       - Pluto-ipv4
     type: fallback
-    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 150
 cfw-bypass:
