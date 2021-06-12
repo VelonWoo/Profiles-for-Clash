@@ -70,7 +70,10 @@ proxy-groups:
     proxies:
       - Pluto
       - Pluto-ipv4
-    type: select
+    type: fallback
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 150
 cfw-bypass:
   - localhost
   - 127.*
