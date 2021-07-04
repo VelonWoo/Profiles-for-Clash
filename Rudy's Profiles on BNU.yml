@@ -98,6 +98,7 @@ cfw-bypass:
 cfw-latency-timeout: 5000
 rules:
 # 手动添加
+  - DOMAIN-SUFFIX,picacomic2.xyz,国外网站
   - DOMAIN-KEYWORD,fc2blog.us,国外网站
   - DOMAIN-KEYWORD,xmanhua.com,DIRECT
   - DOMAIN-KEYWORD,soman.com,DIRECT
